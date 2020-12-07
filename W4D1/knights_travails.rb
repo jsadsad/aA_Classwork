@@ -5,14 +5,22 @@ class KnightPathFinder
   attr_reader :starting_pos, :considered_positions
 
   def initialize(pos)
-    @root_node = PolyTreeNode.new(pos)
-    @considered_positions = Array.new
+    # @root_node = PolyTreeNode.new(pos)
+    @considered_positions = []
     @starting_pos = pos
-    # build_move_tree
+    build_move_tree
   end
 
   def build_move_tree
-    
+    @root_node = PolyTreeNode.new(pos)
+    queue = [@root_node]
+    until queue.empty?
+      dequeue = queue.shift
+      # return dequeue if dequeue.value == target
+      queue += 
+    end
+    nil
+    new_move_positions()
   end
 
   def new_move_positions(pos)
