@@ -1,7 +1,7 @@
-#Object-Oriented Programming
+# Object-Oriented Programming
 
-#Context
-# The goal is control complexity. OOP gives a structured way to break down propblems.
+# Context
+The goal is control complexity. OOP gives a structured way to break down propblems.
 
 #Purpose
 1. Controlling Complexity
@@ -60,7 +60,7 @@ Mixins are used to add functionaly to different kinds of things - A DRAGON (with
 
 #Include and Extend
 `extend` makes methods class methods
-`include`
+`include` is for adding methods only to an instace of a class
 
 #Inheritence Pitfalls
 Inheritance creates implicit dependencies. Inherited methods and variables are not listed in the the subclass code.
