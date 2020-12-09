@@ -32,13 +32,17 @@ MOVES = {
 
 class Cursor
 
-  attr_reader :cursor_pos, :board
+  attr_reader :cursor_pos, :board, :selected
 
   def initialize(cursor_pos, board)
     @cursor_pos = cursor_pos
     @board = board
+    @selected = false
   end
 
+  def toggle_selected
+    @selected = !@selected
+  end
   def get_input
     key = KEYMAP[read_char]
     handle_key(key)
@@ -89,6 +93,7 @@ class Cursor
       exit 0
     when :return, :space
       @cursor_pos
+      toggle_selected
     when :left, :right, :up, :down
       update_pos(MOVES[key])
     else
@@ -98,7 +103,9 @@ class Cursor
 
   # Fill in the #update_pos(diff) method. It should use the diff to reassign @cursor_pos to a new position. You may wish to write a Board#valid_pos? method to ensure you update @cursor_pos only when the new position is on the board.
   def update_pos(diff)
-    new_position = [@cursor_pos[0] + diff[0], @cursor_pos[1] + diff[1]]
+    new_position = [(@cursor_pos[0] + diff[0])%8, (@cursor_pos[1] + diff[1])%8]
     @cursor_pos = new_position if board.valid_move?(new_position)
   end
+
+
 end

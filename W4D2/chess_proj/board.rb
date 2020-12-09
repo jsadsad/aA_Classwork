@@ -3,6 +3,7 @@ require_relative 'pieces'
 class Board
     attr_reader :grid
     def initialize
+        @null_piece = NullPiece.instance
         starting_board
     end
 
@@ -17,7 +18,7 @@ class Board
     end
 
     def empty?(pos)
-        self[pos].nil?
+        self[pos] == @null_piece
     end
 
     def add_piece(pos, piece)
@@ -29,22 +30,22 @@ class Board
         # iterate through pieces
         # at line 0 & 7
         # for each piece, we want to create an instance of that piece at that position.
-        color == "white" ? i = 7 : i = 0
+        color == :white ? i = 7 : i = 0
         pieces.each_with_index do |piece, j|
             piece.new(color, self, [i, j])
         end
     end
 
     def add_pawns(color)
-        color == "white" ? i = 6 : i = 1
+        color == :white ? i = 6 : i = 1
         (0..7).each do |j|
             Pawn.new(color, self, [i, j])
         end
     end
 
     def starting_board
-        @grid = Array.new(8) {Array.new(8, nil)}
-         ["white", "black"].each do |color|
+        @grid = Array.new(8) {Array.new(8, @null_piece)}
+         [:white, :black].each do |color|
              add_pieces(color)
              add_pawns(color)
          end
@@ -93,6 +94,7 @@ end
 board = Board.new
 board.starting_board
 p board
+
 
 
 #R K B q k B K R
