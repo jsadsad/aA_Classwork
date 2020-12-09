@@ -41,7 +41,7 @@ class Board
     end
 
     def starting_board
-        @grid = Array.new(8) {Array.new(8, " ")}
+        @grid = Array.new(8) {Array.new(8, nil)}
         # ["white", "black"].each do |color|
         #     add_pieces(color)
         #     add_pawns(color)
@@ -57,7 +57,7 @@ class Board
         # 
     end
 
-    def validmove?(pos)
+    def valid_move?(pos)
         #this piece has the ability to move like this
         #this is within bounds of the board
         if pos[0] >= 0 && pos[0] <= 7 && pos[1] >= 0 && pos[1] <= 7 
@@ -68,17 +68,16 @@ class Board
     end
 
     def move_piece(start_pos, end_pos)
-        raise "there is no piece at start pos" if start_pos == " "
-        raise "invalid move" if !validmove?(end_pos)
+        raise "there is no piece at start position" if self[start_pos].nil? # start position is empty
+        raise "invalid move" if !valid_move?(end_pos) # if move is out bounds
 
         piece = self[start_pos] #piece is in this starting pos
         #move this value to endpos
         #replace piece at startposition with " "
         self[end_pos] = piece
-        self[start_pos] = " "
+        self[start_pos] = nil
         
         #piece.position = end_pos
-
     end
 
 end
@@ -94,9 +93,3 @@ end
 #' ' ' ' ' ' ' '
 #P P P P P P P P
 #R K B Q K B K R
-
-board = Board.new
-# p board
-
-board.move_piece([5,5], [0,0])
-p board

@@ -21,8 +21,9 @@ end
 
 class Manager < Employee
   attr_reader :employees
-  def initialize(name, salary, title, boss = nil)
-    super
+  def initialize(name, salary, title, boss = nil) #look up the inheritance chain.
+    super #with all arguments
+    # super() # no arguments
     @employees = []
   end
 
