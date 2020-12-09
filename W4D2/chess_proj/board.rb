@@ -21,9 +21,7 @@ class Board
     end
 
     def add_piece(pos, piece)
-        if pos.empty?
-            self[pos] = piece
-        end
+        self[pos] = piece if empty?(pos)
     end
 
     def add_pieces(color)
