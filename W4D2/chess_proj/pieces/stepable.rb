@@ -11,8 +11,9 @@ module Stepable
       cur_x, cur_y = pos
       pos = [subarr[0]+cur_x, subarr[1]+cur_y]
       
-      if board.valid_moves?(pos)
+      if board.valid_moves?(pos) && board.empty?(pos)
         moves << pos
+        
         #we need to implement empty/takepiece
       end
     end

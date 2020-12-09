@@ -9,6 +9,10 @@ class NullPiece < Piece
         @symbol = " "
     end
 
+    def empty?
+        true
+    end
+
     def moves
         []
     end

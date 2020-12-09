@@ -44,7 +44,7 @@ module Slideable
             cur_y = cur_y + dy
             position = [cur_x, cur_y]
 
-            break unless board.valid_move?(position)
+            break unless board.valid_move?(position) && board.empty?(position)
             # implement case if position is empty or is occupied(same color?)
             moves << position
         end

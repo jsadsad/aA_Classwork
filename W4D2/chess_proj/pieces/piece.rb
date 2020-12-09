@@ -5,6 +5,8 @@ class Piece
         @board = board
         @pos = pos
         @valid_moves = []
+
+        board.add_piece(pos, self)
     end
 
     def to_s
@@ -13,6 +15,7 @@ class Piece
     end
 
     def empty?
+        false
     end
 
     def valid_moves
@@ -27,5 +30,6 @@ class Piece
 
     private
     def move_into_check(end_pos)
+
     end
 end

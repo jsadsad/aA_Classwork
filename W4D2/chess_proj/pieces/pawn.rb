@@ -2,6 +2,7 @@ require_relative 'piece'
 
 class Pawn < Piece
   def symbol
+    "♙"
   end
 
   def moves
@@ -29,7 +30,26 @@ class Pawn < Piece
   end
 
   def side_attacks
-    
+  # #P# [0,1]
+   # N#N [1,0],[1,2]
+    #P#
+    # only two steps [i+forward_dir, j+ 1],[i+forward_dir, j-1]
+    #if enemy piece is on that position, we want to consider that move, 
+    #otherwise we want to return []
+
+    i, j = pos
+    side_dir = [[i+forward_dir, j+ 1],[i+forward_dir, j-1]]
+
+    #next if spaces are empty
+    #next if its a valid move
+    #there needs to be an enemy piece at the given side direction
+
+    side_dir.select do |new_pos|
+      next if board.empty?(new_pos)
+      next if board.valid_move?(new_pos)
+      enemy = board[new_pos]
+      enemy.color != color
+    end
   end
 
   def at_start_row?
