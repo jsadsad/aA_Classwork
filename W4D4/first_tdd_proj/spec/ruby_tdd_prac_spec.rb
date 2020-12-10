@@ -44,10 +44,13 @@ end
     ]}
     it "should transpose the matrix" do
       expect(matrix_arr.my_transpose).to eq([
+        [0, 3, 6],
         [1, 4, 7],
-        [2, 5, 8],
-        [3, 6, 9]
+        [2, 5, 8]
       ])
+    end
+    it "can not use the built-in transpose method" do
+      expect_any_instance_of(Array).not_to receive(:transpose)
     end
 
   end
