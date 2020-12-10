@@ -1,10 +1,8 @@
 module Stepable
 
- 
-  
   def moves
     moves = []
-    move_diffs.each do |subarr|#moves diffs is a 2D array, where each array is a positional movement
+    move_diffs.each do |subarr| #moves diffs is a 2D array, where each array is a positional movement
     #iterate thru this,
     #take each subarr position and add it to our current position to get to a move
     #unless this isnt a valid move, we have to store this position somewhere
@@ -13,7 +11,8 @@ module Stepable
       
       if board.valid_moves?(pos) && board.empty?(pos)
         moves << pos
-        
+      elsif board.valid_moves?(pos) && board[pos].color != color
+        moves << pos
         #we need to implement empty/takepiece
       end
     end

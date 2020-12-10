@@ -79,14 +79,40 @@ class Board
         #replace piece at startposition with " "
         self[end_pos] = piece
         self[start_pos] = nil
+
+        # raise "" if piece.color != self[end_pos].color   
         
         #piece.position = end_pos
     end
 
-    def in_check?(color)
+    def pieces
+        @grid.flatten.reject { |piece| piece.empty? }
     end
 
-    def find_king?(color)
+    # You can implement this by 
+    # (1) finding the position of the King on the board then 
+    # (2) seeing if any of the opposing pieces can move to that position.
+
+    def in_check?(color)
+        # if king is opposite color, return true if king is in danger
+        # if white or black, king[pos] == find_king
+        king_pos = find_king(color)
+        pieces.any? do |piece|
+            piece.color != color && piece.moves.include?(king_pos)
+        end
+    end
+
+    def find_king(color)
+        # find king's position => piece.class == "King"
+        king = pieces.find {|piece| piece.color == color && piece.is_a? (King) }
+        return king.pos
+    end
+
+    def checkmate?(color)
+        return false unless in_check?(color)
+        selected = pieces.select {|piece| piece.color == color}
+        selected.all? { |piece| piece.valid_moves.empty? }
+        # in_check? == true && valid_moves.empty?
     end
 
 end
@@ -94,15 +120,3 @@ end
 board = Board.new
 board.starting_board
 p board
-
-
-
-#R K B q k B K R
-#P P P P P P P P
-#' ' ' ' ' ' ' '
-#' ' ' ' ' ' ' '
-#' ' ' ' ' ' ' '
-#' ' ' ' ' ' ' '
-#' ' ' ' ' ' ' '
-#P P P P P P P P
-#R K B Q K B K R
