@@ -115,6 +115,14 @@ class Board
         # in_check? == true && valid_moves.empty?
     end
 
+    def dup
+        dup_board = Board.new
+        pieces.each do |piece|
+            piece.class.new(piece.color, dup_board, piece.position)
+        end
+        return dup_board
+    end
+
 end
 
 board = Board.new
