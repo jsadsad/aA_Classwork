@@ -1,7 +1,7 @@
 # Objectives
 
 1. Why do we test?
-We code the minimum amount to make sure the code works. It allows for easier collaboration.
+We code the minimum amount to _make sure the code works_. It allows for easier collaboration. It's going to force us to write the minimum amount of code needed - different edge cases. You will write the code that solves the test.
 
 2. What is TDD?
 Software Engineering process. Test Driven Development. Red, Green, refactor.
@@ -9,9 +9,9 @@ Software Engineering process. Test Driven Development. Red, Green, refactor.
 3. What is the testing pyramid?
 E2E, Integration, and Unit.
 
-Unit test is the `initialize`, `to_s`.
+Unit test is the `initialize`, `to_s`. Should be testing something small.
 
-Integration tests the classes working together. `Board` and `Piece` class.
+Integration tests the classes working together. `Board` and `Piece` class. Tests how some things interact together.
 
 End-to-End tests the _entire_ flow from start to finish. We only need less of it.
 
@@ -39,8 +39,10 @@ One `subject` for every `describe`.
 # Let
 Let is just a way to declare a varible we can use anywhere in `describe`. Can have as many as we want.
 
-# Double / Mock
+# Doubles / Mocks
 A blank object which allows us to mimic another class which we plan on writing. Allows us to do unit test that might depend on another class.
+
+How the `piece` class and `board` class integrate together. Doubles allows to to create unit test 1 class method that might rely on how we expect it to behave.
 
 # before(:all) and before(:each)
 before(:each) will run the block before each test. Before lets us DRY up our code.
@@ -49,6 +51,8 @@ before(:each) will run the block before each test. Before lets us DRY up our cod
 `.to eq` will compare the two strings to `==`
 
 # etc
+
+_RED,GREEN, REFACTOR_: RED- WRITE SOME TESTS THAT FAIL, GREEN - SATISFY TEST/SPEC AND MAKE CODE THAT PASSES, REFACTOR
 
 The amount of specs is equivalent to the amount of `it` blocks.
 
