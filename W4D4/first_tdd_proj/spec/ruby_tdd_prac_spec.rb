@@ -1,17 +1,5 @@
 require 'ruby_tdd_prac'
 
-# describe Array do
-#   subject(:test_arr) { Array.new }
-
-#   let(:my_uniq_item) { double([1, 1, 2, 3]) }
-
-#   describe "#my_uniq" do
-#     it "should return only unique elements" do
-#       expect(test_arr.my_uniq).to eq([1,2,3])
-#     end
-#   end
-# end
-
 describe Array do
   
   describe "#my_uniq" do
@@ -52,9 +40,14 @@ end
     it "can not use the built-in transpose method" do
       expect_any_instance_of(Array).not_to receive(:transpose)
     end
-
   end
 
+  describe "#stock_picker" do
+    let(:stock) { [100, 500, 600, 999, 333] }
+    it "must return the two pairs with highest sums" do
+      expect(stock.stock_picker).to eq([600, 999])
+    end
+  end
 
 end
 

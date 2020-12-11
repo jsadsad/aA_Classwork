@@ -33,7 +33,7 @@ class Array
 #   Stock Picker
 # Write a method that takes an array of stock prices (prices on days 0, 1, ...), and outputs the most profitable pair of days on which to first buy the stock and then sell the stock. Remember, you can't sell stock before you buy it!
 
-  def stock_picker    #ex:   [200,300,100]
+  def stock_picker
     biggest_sum = Hash.new{|h,v|h[v] = []}
     combinations_arr = []
     self.each_with_index do |ele1, idx1|
@@ -42,7 +42,6 @@ class Array
           combinations_arr.push([ele1, ele2])
         end
       end
-
     end
     combinations_arr.each do |subarr|
       biggest_sum[subarr.sum] = subarr
@@ -50,6 +49,3 @@ class Array
     biggest_sum.max[-1]
   end
 end
-
-arr = [100, 500, 600, 999, 333]
-p arr.stock_picker
