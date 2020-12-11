@@ -2,7 +2,7 @@ class TowersOfHanoi
   attr_reader :game_over
 
   def initialize
-    @towers = [[1,2,3], [], []]
+    @towers = [[1,2,3,4], [], []]
     @game_over = false
     @towers_win = [[], [], [1,2,3]]
     @turn = 1
