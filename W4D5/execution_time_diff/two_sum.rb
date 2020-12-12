@@ -38,14 +38,13 @@ end
 
 
 def hash_two_sum?(arr, target)
-    #debugger
-    hash_sum = Hash.new
+    hash_sum = {}
     arr.each do |ele|
         hash_sum[ele] = true
     end
     arr.each do |ele|
         ans = target - ele
-        return true if hash_sum[ans]
+        return true if hash_sum.has_key?(ans) && ans != ele
     end
     false
 end
