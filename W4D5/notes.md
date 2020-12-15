@@ -16,7 +16,7 @@ Memory is cheap and abundant. Time is more valuable than space.
 
 # Asymptotes
 
-An asymptote of a curse is a line such that the distance between the curve and the line approaches zero as the input size grows to infinity.
+An asymptote of a curve is a line such that the distance between the curve and the line approaches zero as the input size grows to infinity.
 
 # Examples
 
