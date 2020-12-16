@@ -1,0 +1,145 @@
+/* Introduction to Cascading Style Sheets */
+
+  /* If the user cannot load the Arial font, the sans-serif font is used */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FEFFF1;
+}
+
+h1 {
+  font-size: 38px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+/* This selector selects ALL anchor tag children of ALL list elements that
+are children of an Unordered Lsit element */
+
+ul li a, figcaption a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* This selector selects only IMMEDIATE (1 level deep) image element children
+of the header element */
+header > img {
+  width: 100px;
+}
+
+/* Selects all elements with the class attribute "ingredients-list" */
+.ingredients-list {
+
+  /* The list style property is shorthand for multiple list-style properties*/
+  list-style: square inside;
+}
+
+ol {
+  list-style: upper-roman inside;
+}
+
+.user_review h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    width: 27px;
+    height: 27px;
+    background-image: url(../assets/stars.png);
+    vertical-align: bottom;
+}
+
+input[type="radio"]:checked {
+  background-position: 30px 30px;
+}
+
+
+input:last-child {
+    background: gold;
+}
+
+input:last-child:hover {
+    -webkit-filter: brightness(90%);
+}
+
+ol li:nth-of-type(2n) {
+  background-color: whitesmoke;
+}
+
+h2 + .user_review {
+    border-top: 1px solid black;
+}
+
+nav {
+  display: inline-block;
+}
+
+/* aligns the nav columns to rows */
+nav li {
+  display: inline-block;
+}
+
+a {
+  padding: 20px;
+}
+
+body {
+  width: 900px;
+  margin: 0 auto;
+}
+
+/* before the h1 shakshuka */
+section {
+  width: 700px;
+  display: inline-block;
+  vertical-align: middle;
+  /* border-left: 1px solid black; */
+}
+
+/* Ingredients section */
+aside {
+  width: 180px;
+  display: inline-block;
+  margin-right: 15px;
+  /* border-left: 1px solid black; */
+}
+
+/* Space out the list elements in the ingredients list with a top and bottom margin of 15px. */
+
+/* margin: 25px 50px 75px 100px;
+
+top margin is 25px
+right margin is 50px
+bottom margin is 75px
+left margin is 100px
+ */
+
+.ingredients-list li {
+ margin: 15px 0px;
+}
+
+.dir_child > li {
+  color: tomato;
+  margin: 10px 0px 20px;
+}
+
+input[type="text"] {
+  display: block;
+  width: 175px;
+}
+
+select {
+  margin: 10px 0;
+  width: 180px;
+}
+
+textarea {
+  width: 350px;
+}
+
+label {
+  display: block;
+}
