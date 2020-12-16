@@ -1,7 +1,4 @@
-DROP TABLE IF EXISTS cattoys; /*lets us run the file multiple times and start fresh
-(create table from scratch) each time we run the file*/
-DROP TABLE IF EXISTS cats; /*Drop all joins table first b/c they are referencing other tables. Can't dop the other tables 
-if something is refrencing them*/ 
+PRAGMA foreign_keys = ON;
 
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,
@@ -36,7 +33,44 @@ CREATE TABLE replies (
   FOREIGN KEY (question_id) REFERENCES (questions.id)
   FOREIGN KEY (user_id) REFERENCES (users.id)
   FOREIGN KEY (parent_id) REFERENCES (replies.id)
-); 
+);
+
+CREATE TABLE question_likes (
+  id INTEGER PRIMARY KEY,
+  user_id INTEGER NOT NULL,
+  question_id INTEGER NOT NULL,
+
+  FOREIGN KEY (user_id) REFERENCES (users.id)
+  FOREIGN KEY (question_id) REFERENCES (questions.id)
+);
+
+INSERT INTO
+  users(fname, lname)
+VALUES ("John", "Doe"), -- this is user 1
+
+INSERT INTO
+  users(fname, lname)
+VALUES ("Arthur", "Miller"), -- this is user 2
+
+INSERT INTO
+  questions(title, body, user_id)
+VALUES ("help, I am lost!", "i don't understand the lecture", 1), -- this is question id 1
+
+INSERT INTO
+  questions(title, body, user_id)
+VALUES ("chapter 3??", "what is going to be on the test :(", 2), -- this is question id 2
+
+INSERT INTO
+  question_follows(user_id, question_id),
+VALUES (2, 1)
+
+INSERT INTO
+  question_follows(user_id, question_id),
+VALUES (1, 2)
+
+INSERT INTO
+  question_likes(user_id, question_id) -- arthur miller likes "help, I am lost!"
+VALUES (2, 1)
 
 
 -- INSERT INTO 
