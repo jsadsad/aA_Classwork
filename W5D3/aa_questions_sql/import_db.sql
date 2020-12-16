@@ -4,26 +4,40 @@ DROP TABLE IF EXISTS cats; /*Drop all joins table first b/c they are referencing
 if something is refrencing them*/ 
 
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
+    id INTEGER PRIMARY KEY,
     fname TEXT NOT NULL,
     lname TEXT NOT NULL
 );
 
 CREATE TABLE questions (
-  id SERIAL PRIMARY KEY,
+  id INTEGER PRIMARY KEY,
   title TEXT NOT NULL,
   body TEXT,
-  user_id INTEGER NOT NUL,
+  user_id INTEGER NOT NULL,
   FOREIGN KEY (user_id) references (users.id)
 );
 
 CREATE TABLE question_follows (
-  FOREIGN KEY
+  id INTEGER PRIMARY KEY,
+  user_id INTEGER NOT NULL,
+  question_id INTEGER NOT NULL,
+
+  FOREIGN KEY (user_id) REFERENCES (users.id)
+  FOREIGN KEY (question_id) REFERENCES (questions.id)
 );
 
 CREATE TABLE replies (
+  id INTEGER PRIMARY KEY,
+  parent_id INTEGER NOT NULL,
   body TEXT NOT NULL,
-);
+  question_id INTEGER NOT NULL,
+  user_id INTEGER NOT NULL,
+  
+  FOREIGN KEY (question_id) REFERENCES (questions.id)
+  FOREIGN KEY (user_id) REFERENCES (users.id)
+  FOREIGN KEY (parent_id) REFERENCES (replies.id)
+); 
+
 
 -- INSERT INTO 
 --     cats(name, color,breed) /*specifies the order we will be supplying values in below*/
