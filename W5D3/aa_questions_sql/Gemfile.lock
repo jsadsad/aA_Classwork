@@ -4,10 +4,10 @@ GEM
     sqlite3 (1.4.2)
 
 PLATFORMS
-  x86_64-darwin-20
+  ruby
 
 DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   2.2.1
+   2.1.4
