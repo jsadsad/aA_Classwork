@@ -11,7 +11,7 @@ end
 def bad_years
   # List the years in which a movie with a rating above 8 was not released.
   Movie
-    .group(:yr)
+    .group(:yr) # one column for every year with a bunch of data.
     .having("Max(score) < 8")
     .pluck(:yr)
 
@@ -35,10 +35,10 @@ def vanity_projects
 
   # Note: Directors appear in the 'actors' table.
   Movie
-    .joins(:actors)
+    .joins(:actors) #we don't need to join castings because castings is a through.
     .select('movies.id, movies.title, actors.name')
     .where("director_id = actors.id")
-    .where("castings.ord = 1")
+    .where("castings.ord = 1") #instead, you can use .where(castings: {ord: 1}). this is the activerecords way.
 end
 
 def most_supportive
