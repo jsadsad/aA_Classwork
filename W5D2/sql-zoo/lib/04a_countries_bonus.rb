@@ -77,3 +77,15 @@ def large_neighbors
       )
   SQL
 end
+
+def countries_over_25000000
+  # Find the continents where all countries have a population <= 25000000. Then find the names of the countries associated with these continents. Show name, continent and population.
+  execute(<<-SQL)
+  SELECT name, continent, population
+  FROM countries x
+  WHERE 25000000 > ALL (
+  SELECT population
+  FROM countries y
+  WHERE x.continent = y.continent )
+  SQL
+end
