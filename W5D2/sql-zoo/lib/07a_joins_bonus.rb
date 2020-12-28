@@ -26,12 +26,20 @@ require_relative './sqlzoo.rb'
 def alison_artist
   # Select the name of the artist who recorded the song 'Alison'.
   execute(<<-SQL)
+  SELECT artist
+  FROM albums
+  JOIN tracks ON tracks.album = albums.asin
+  WHERE song = 'Alison'
   SQL
 end
 
 def exodus_artist
   # Select the name of the artist who recorded the song 'Exodus'.
   execute(<<-SQL)
+  SELECT artist
+  FROM albums
+  JOIN tracks on tracks.album = albums.asin
+  WHERE song = 'Exodus'
   SQL
 end
 
@@ -60,6 +68,7 @@ def eponymous_albums
   # An 'eponymous album' has a `title` that is the same as its recording
   # artist's name. Select the titles of all the eponymous albums.
   execute(<<-SQL)
+
   SQL
 end
 
@@ -67,6 +76,7 @@ def song_title_counts
   # Select the song names that appear on more than two albums. Also select the
   # COUNT of times they show up.
   execute(<<-SQL)
+
   SQL
 end
 
@@ -75,6 +85,7 @@ def best_value
   # pence. Find the good value albums - show the title, the price and the number
   # of tracks.
   execute(<<-SQL)
+
   SQL
 end
 
@@ -83,6 +94,7 @@ def top_track_counts
   # tracks. List the top 10 albums. Select both the album title and the track
   # count, and order by both track count and title (descending).
   execute(<<-SQL)
+
   SQL
 end
 
@@ -90,6 +102,7 @@ def rock_superstars
   # Select the artist who has recorded the most rock albums, as well as the
   # number of albums. HINT: use LIKE '%Rock%' in your query.
   execute(<<-SQL)
+
   SQL
 end
 
@@ -102,5 +115,6 @@ def expensive_tastes
   # subquery. Next, JOIN the styles table to this result and use aggregates to
   # determine the average price per track.
   execute(<<-SQL)
+
   SQL
 end
