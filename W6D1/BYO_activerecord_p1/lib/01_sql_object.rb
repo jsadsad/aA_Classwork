@@ -20,7 +20,12 @@ class SQLObject
   end
 
   def self.all
-    # ...
+    data =  DBConnection.execute(<<-SQL)
+     SELECT
+       *
+     FROM
+       #{table_name}
+   SQL
   end
 
   def self.parse_all(results)
@@ -28,7 +33,12 @@ class SQLObject
   end
 
   def self.find(id)
-    # ...
+    result = DBConnection.execute(<<-SQL, id)
+      SELECT *
+      FROM #{table_name}
+      WHERE id = ?
+    SQL
+    return nil if result.empty?
   end
 
   def initialize(params = {})
@@ -48,7 +58,29 @@ class SQLObject
   end
 
   def update
-    # ...
+
+   columns = self.class.columns[1..-1]
+   col_names = columns.join(",")
+
+   question_marks = []
+   columns.length.times {question_marks << "?"}
+   question_marks = question_marks.join(",")
+
+   id = self.id
+   vals = attribute_values[1..-1]
+
+   table_name = self.class.table_name
+
+
+   ####Finally, update the database#####
+   DBConnection.execute(<<-SQL,*vals)
+     UPDATE
+       #{table_name}
+     SET
+       (#{col_names}) = (#{question_marks})
+     WHERE
+       id = #{id}
+   SQL
   end
 
   def save
