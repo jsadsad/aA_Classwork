@@ -59,3 +59,26 @@ Three ways to pass params in an HTTP request as follows:
 - Using _wildcards_ inside a route: `users/:id`
 - Via a query string
 - Inside a request body(information that a user puts in). This is usually inside a form. Avoid for `GET`.
+
+# Resources
+
+Resources generate 7 standard RESTful routes.
+
+- `resources :users`
+
+Can add `only` or `except` option to include/exclude certain actions
+
+Create a custom route in `routes.rb`: 'get `/users`, to: `users#index`'
+
+# Recap
+
+Use `rails generate controller users`
+
+Use `rails generate model user`
+
+Use `rails d model <model_name> ` to roll back a
+ generated controller or model
+
+Add a JSON extension `render json: users`
+
+`skip_before_action :verify_authenticity_token` makes sure to skip the check right before the action in the controller.
