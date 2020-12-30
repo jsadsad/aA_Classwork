@@ -1,0 +1,45 @@
+/* PHASE 1: Header */
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 100px;
+  font-size: 21px;
+}
+
+.header {
+  display: flex;
+  background: #f00;
+  border-bottom: 1px solid #fff;
+  color: white;
+}
+
+.header a {
+  display: block;
+  padding: 10px
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 1000px;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.header-logo {
+  border-right: 1px solid #fff;
+}
+
+.header-list {
+  display: flex;
+}
+
+.header-list > li {
+  display: flex;
+  border-left: 1px solid #ccc;
+}
+
+.header-list > li:hover {
+  background: #000;
+}
