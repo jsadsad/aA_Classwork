@@ -7,9 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(username: 'Leonardo')
-Artwork.create(title: 'Mona Lisa', artist_id: 1)
-Artwork.create(title: 'The Last Supper', artist_id: 1)
-User.create(username: 'Leonardo')
+Artwork.create(title: 'Mona Lisa', artist_id: 1, image_url: "ml")
+Artwork.create(title: 'The Last Supper', artist_id: 1, image_url: "last")
+User.create(username: 'Donatello')
+Artwork.create(title: 'David', artist_id: 2, image_url: 'dv')
+Artwork.create(title: 'Equestrian statue of Gattamelata', artist_id: 2, image_url: 'eqst_g')
 
 # create_table "artwork_shares", force: :cascade do |t|
 #     t.integer "artwork_id", null: false
@@ -36,4 +38,3 @@ User.create(username: 'Leonardo')
 #   end
 
 # end
-
