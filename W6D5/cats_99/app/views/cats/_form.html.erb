@@ -1,3 +1,18 @@
 <form  action="/cats" method="POST">
-  <input type="text" name="cat[name]">
+
+  <label>Name
+    <input type="text" name="cat[name]">
+  </label>
+
+  <label>Sex
+    <input type="radio" id="male" name="sex" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="sex" value="female">
+    <label for="female">Female</label><br>
+  </label>
+
+  <label>Color
+    <input type="text" name="cat[color]">
+  </label>
+
 </form>
