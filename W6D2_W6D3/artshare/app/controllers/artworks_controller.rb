@@ -3,8 +3,9 @@ class ArtworksController < ApplicationController
   # resources :artworks, only: [:create, :destroy, :index, :show, :update]
 
   def index
-    artworks = Artwork.all
-    render json: artworks
+    # user_artworks = Artwork.find_by(artist_id: params[:user_id])
+    user_artworks = Artwork.where(artist_id: params[:user_id])
+    render json: user_artworks
   end
 
   def show
