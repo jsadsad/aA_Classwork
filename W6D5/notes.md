@@ -31,3 +31,31 @@ REST is the connection between HTTP verb and a controller action.
 - Use byebug!
 
 - `binding_of_caller` and `better_errors` gem
+
+# _method
+
+Looks at the method above and overwrite it with the value. `method="POST"` will be overwritten as `value="PATCH"`
+
+# Partials
+
+Partials are primarily used for refactoring / DRYing up HTML code.
+
+# Things to Remember
+
+- returning ERB tags vs non-returning
+
+- instance variables are need ed to supply data to your views.
+
+- no intance variables in partials!
+
+- you can not `render` and `redirect_to` at the same time.
+
+- `<%= render 'user', user: @user %>'`
+
+- `<input type = "hidden", name="_method" value="patch">`
+
+- partials are used to dry up our code
+
+- `user_url(@url)` to invoke users#show
+
+- `users#update` is the controller action to modify a user in the database.
