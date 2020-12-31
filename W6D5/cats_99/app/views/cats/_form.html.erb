@@ -1,26 +1,39 @@
 <form  action="/cats" method="POST">
 
-  <label>Name
+  <label>Name</label>
     <input type="text" name="cat[name]">
-  </label>
+  
+  <br>
 
-  <label>Sex
+  <label>Sex</label>
     <input type="radio" id="male" name="sex" value="male">
     <label for="male">Male</label><br>
     <input type="radio" id="female" name="sex" value="female">
     <label for="female">Female</label><br>
-  </label>
+  
+  <br>
 
   <label for="colors">Color</label>
     <!-- <input type="text" name="cat[color]"> -->
     <select name="color" id="colors">
+      <option disabled>--Select a color--</option>
       <option value="white">White</option>
       <option value="brown">Brown</option>
       <option value="black">Black</option>
       <option value="red">Red</option>
     </select>
 
-    <input type="submit" value="Submit">
+  <br>
+
+  <label>Date</label>
+    <input type="date" name="date" value="cat[birth_date]">
+
+  <br>
+  <label>Description</label>
+    <input type="textarea" value="cat[descritpion]">
+
+  <br>
+  <input type="submit" value="Submit">
 </form>
 
 <!-- <form action="/action_page.php">

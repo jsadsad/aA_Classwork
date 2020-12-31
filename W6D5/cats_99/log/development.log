@@ -225,3 +225,83 @@ Processing by CatsController#create as */*
 Completed 200 OK in 44ms (Views: 0.6ms | ActiveRecord: 29.0ms)
 
 
+Started GET "/" for ::1 at 2020-12-31 15:34:19 -0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alexkansas/.rvm/gems/ruby-2.5.1/gems/railties-5.2.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alexkansas/.rvm/gems/ruby-2.5.1/gems/railties-5.2.4.4/lib/rails/templates/rails/welcome/index.html.erb (31.9ms)
+Completed 200 OK in 66ms (Views: 52.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats" for ::1 at 2020-12-31 15:34:28 -0800
+Processing by CatsController#index as HTML
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template cats/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/alexkansas/Desktop/jsadsad/aA_Classwork/W6D5/cats_99/app/views"
+):
+  
+app/controllers/cats_controller.rb:10:in `index'
+Started GET "/cats" for ::1 at 2020-12-31 15:35:02 -0800
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  Rendered cats/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 57ms (Views: 56.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats/1" for ::1 at 2020-12-31 15:35:21 -0800
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (1.7ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:14
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 76ms (Views: 32.5ms | ActiveRecord: 28.4ms)
+
+
+Started GET "/cats/new" for ::1 at 2020-12-31 15:35:29 -0800
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (0.4ms)
+  Rendered cats/new.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 63ms (Views: 62.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats/new" for ::1 at 2020-12-31 15:35:56 -0800
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (0.9ms)
+  Rendered cats/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 61ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats/new" for ::1 at 2020-12-31 15:36:28 -0800
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (0.8ms)
+  Rendered cats/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 180ms (Views: 179.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats/new" for ::1 at 2020-12-31 15:36:37 -0800
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (0.4ms)
+  Rendered cats/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cats" for ::1 at 2020-12-31 15:38:20 -0800
+Processing by CatsController#create as HTML
+  Parameters: {"cat"=>{"name"=>"Tommy"}, "sex"=>"male", "color"=>"black", "date"=>"2019-04-03"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/cats_controller.rb:20
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (0.3ms)
+  Rendered cats/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 64ms (Views: 48.0ms | ActiveRecord: 0.6ms)
+
+
