@@ -1,3 +1,11 @@
+<% if type == :new %>
+    <% action_url = cats_url %>
+    <% button_text = "Create user" %>
+<% elsif type == :edit %>
+    <% action_url = cat_url(cat.id) %>
+    <% button_text = "Update user" %>
+<% end %>
+
 <form  action="/cats" method="POST">
 
   <label>Name</label>
