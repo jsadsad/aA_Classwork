@@ -1,0 +1,7 @@
+All of cats will be here.
+
+<% @cats.each do |cat| %>
+  <ul>
+    <%= render "cat", {cat: cat}%>
+  </ul>
+<% end %>

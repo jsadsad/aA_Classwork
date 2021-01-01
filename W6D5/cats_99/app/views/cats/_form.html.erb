@@ -2,21 +2,23 @@
 
   <label>Name</label>
     <input type="text" name="cat[name]">
-  
+
   <br>
 
   <label>Sex</label>
-    <input type="radio" id="male" name="sex" value="male">
+    <br>
+    <input type="radio" id="male" name="cat[sex]" value="M">
     <label for="male">Male</label><br>
-    <input type="radio" id="female" name="sex" value="female">
+    <input type="radio" id="female" name="cat[sex]" value="F">
     <label for="female">Female</label><br>
-  
+
   <br>
 
   <label for="colors">Color</label>
     <!-- <input type="text" name="cat[color]"> -->
-    <select name="color" id="colors">
-      <option disabled>--Select a color--</option>
+    <select name="cat[color]" id="colors">
+      <option value="select" selected>--Select a color--</option>
+      <!-- Cat.color.each |color| -->
       <option value="white">White</option>
       <option value="brown">Brown</option>
       <option value="black">Black</option>
@@ -26,11 +28,11 @@
   <br>
 
   <label>Date</label>
-    <input type="date" name="date" value="cat[birth_date]">
+    <input type="date" name="cat[birth_date]" value="cat[birth_date]">
 
   <br>
   <label>Description</label>
-    <input type="textarea" value="cat[descritpion]">
+    <input type="textarea" name="cat[description]">
 
   <br>
   <input type="submit" value="Submit">

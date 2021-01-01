@@ -1,25 +1,26 @@
+
 <table>
     <thead>
         <tr>
-            <th colspan="2">cat.name</th>
+            <th colspan="2"><%= render "cat", {cat: cat}%></th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Age</td>
-            <td>cat.age</td>
-        </tr>
-        <tr>
             <td>Birth Date</td>
-            <td>cat.birth_date</td>
+            <td><%= @cat.birth_date %></td>
         </tr>
         <tr>
             <td>Color</td>
-            <td>cat.color</td>
+            <td><%= @cat.color %></td>
         </tr>
         <tr>
             <td>Sex</td>
-            <td>cat.sex</td>
+            <td><%= @cat.sex %></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><%= @cat.description %></td>
         </tr>
     </tbody>
 </table>
