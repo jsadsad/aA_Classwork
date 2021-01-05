@@ -1,4 +1,4 @@
-class UsersController < ApplicationController'
+class UsersController < ApplicationController
   def new
     @user = User.new
     render :new
@@ -7,7 +7,7 @@ class UsersController < ApplicationController'
   def create
     @user = User.create(user_params)
     if @user.save!
-      login(@user)
+      login!(@user)
       redirect_to '/'
       # bands index
     end
