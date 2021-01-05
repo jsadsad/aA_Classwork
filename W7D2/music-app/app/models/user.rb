@@ -36,5 +36,4 @@ class User < ApplicationRecord
     email && email.is_password?(password) ? email : nil
   end
 
-
 end
