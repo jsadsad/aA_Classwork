@@ -8,12 +8,12 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <header>
+  <header class='header'>
     <h1>Music App Header</h1>
-    <h3>Logged in as: <%= current_user.email %></h3>
   </header>
   <body>
     <% if logged_in? %>
+      <h3>Logged in as: <%= current_user.email %></h3>
       <h2>Hello <%= current_user.email %></h2>
 
       <form action=<%= session_url %> method="POST">
