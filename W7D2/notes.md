@@ -70,3 +70,13 @@ Rails enables CSRF protection by default.
 9. Why do we only have one session (single resource)?
 
 We don't have a sessions table, so for a request we are dealing with at most 1 session at a time. We give the Browser a cookie. It only has one set of cookies. We are looking for a user in the 1 session - a SINGULAR session.
+
+# Flex
+
+CRLLL:
+
+1. C: current_user
+2. R: require_logged_in
+3. L: login
+4. L: logout
+5. L: logged_in?
