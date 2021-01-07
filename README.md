@@ -1,13 +1,15 @@
 # aA_Classwork
 
-# What you'll learn in 16 weeks
+Projects, notes, and feedbacks.
+
+### What you'll learn in 16 weeks
 
 Your hard work and commitment will transform you into a Full-stack Web Developer.
 
 - Build from scratch with JavaScript, Ruby on Rails, SQL, HTML and CSS.
 - Accelerate your projects with ReactJS, Express, Flask, and SQL Alchemy.
 
-You'll be shocked at how much you can learn - employers will be too.
+Schedule in _Weeks_:
 
 1. Solve Algorithms Using Fundamental Ruby Methods
 
@@ -40,3 +42,5 @@ You'll be shocked at how much you can learn - employers will be too.
 15. Take a Deep Dive into Vanilla JavaScript
 
 16. Prepare for Common Interview Topics
+
+## Important
