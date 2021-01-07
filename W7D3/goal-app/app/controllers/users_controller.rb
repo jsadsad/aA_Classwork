@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :require_no_current_user!, only: [:new, :create]
   def show
     @user = User.find(params[:id])
   end

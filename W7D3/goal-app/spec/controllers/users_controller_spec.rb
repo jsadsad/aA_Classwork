@@ -27,7 +27,7 @@ RSpec.describe UsersController, type: :controller do
       it "validates the presence of the user's username and password" do
         post :create, params: {
           user: {
-            username: "jill_bruce",
+            username: "sam",
             password: ""
           }
         }
@@ -38,7 +38,7 @@ RSpec.describe UsersController, type: :controller do
       it "validates that the password is at least 6 characters long" do
         post :create, params: {
           user: {
-            username: "jill_bruce",
+            username: "miguel",
             password: "short"
           }
         }
@@ -51,7 +51,7 @@ RSpec.describe UsersController, type: :controller do
       it "redirects user to user show on success" do
         post :create, params: {
           user: {
-            username: "jill_bruce",
+            username: "johnny",
             password: "password"
           }
         }
