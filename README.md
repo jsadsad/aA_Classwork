@@ -2,7 +2,7 @@
 
 Projects, notes, and feedbacks.
 
-### What you'll learn in 16 weeks
+### What you'll learn in 16 weeks :writing_hand:
 
 Your hard work and commitment will transform you into a Full-stack Web Developer.
 
@@ -15,7 +15,7 @@ Schedule in _Weeks_:
 
 2. Build Classes and Utilize Object Interactions
 
-3. Algorithms Using Recursion & Abstract Data Types
+3. Algorithms Using Recursion & Abstract Data Types :vomiting_face:
 
 4. Object-Oriented Programs With Inheritance & Modules
 
@@ -44,3 +44,7 @@ Schedule in _Weeks_:
 16. Prepare for Common Interview Topics
 
 ## Important
+
+![Big O Notation](VISUALS/Big_O_Complexity.jpeg)
+
+![Rails MVC](VISUALS/Rails_MVC.png)
