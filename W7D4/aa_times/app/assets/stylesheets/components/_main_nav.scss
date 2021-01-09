@@ -1,22 +1,29 @@
 .main-nav {
-
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border-bottom: 2px solid $dark-gray;
 }
 
 .left-nav > ul,
 .right-nav > ul {
-
+  display: flex;
+  align-items: center;
 }
-
 .left-nav {
 
   > ul {
     > li {
-
+      text-transform: uppercase;
+      margin-left: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 21px;
     }
   }
 
   span {
-
+    margin-left: 10px;
   }
 }
 
@@ -25,20 +32,22 @@
   > ul {
 
     > li {
-  
+      margin-left: 20px;
     }
 
     > li:last-of-type {
-  
+      position: relative;
+      font-size: 16px;
+      transition: background-color 0.3s;
     }
   }
-  
-  i {
 
+  i {
+    font-size: 21px;
   }
 }
 
 .left-nav > ul > li:hover,
 .right-nav > ul > li:last-of-type:hover {
-
+  background-color: $light-blue;
 }
