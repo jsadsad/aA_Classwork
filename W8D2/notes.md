@@ -38,3 +38,9 @@ Contains information about the HTTP request:
 - URL information
 - Server information
 - 300 status level is a redirect.
+
+# RAILS LITE LEARNING GOALS
+- Deeply understand the fundamentals of Rails by way of building it.
+- Understand general structure of a web application framework.
+- Don't work on JS yet!
+- Aspiring backend engineers, take notes!
