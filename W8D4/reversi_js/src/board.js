@@ -8,7 +8,16 @@ if (typeof window === 'undefined'){
  * Returns a 2D array (8 by 8) with two black pieces at [3, 4] and [4, 3]
  * and two white pieces at [3, 3] and [4, 4]
  */
+
+// var x = new Array(10);
+
+// for (var i = 0; i < x.length; i++) {
+//   x[i] = new Array(3);
+// }
 function _makeGrid () {
+  const grid = new Array(8);
+  grid.fill(" ")
+  return grid.map(ele => new Array(8));
 }
 
 /**
