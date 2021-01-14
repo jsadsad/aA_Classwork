@@ -98,5 +98,3 @@ _Context_: object within which the function runs
 `[] + {}` = object
 
 - You can not use `=>` when defining a function on the prototype.
-
-- 
