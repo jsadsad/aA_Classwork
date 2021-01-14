@@ -15,9 +15,14 @@ if (typeof window === 'undefined'){
 //   x[i] = new Array(3);
 // }
 function _makeGrid () {
-  const grid = new Array(8);
+  let grid = new Array(8);
   grid.fill(" ")
-  return grid.map(ele => new Array(8));
+  grid = grid.map(ele => new Array(8));
+  grid[4][3] = new Piece ("black");
+  grid[3][4] = new Piece ("black");
+  grid[3][3] = new Piece ("white");
+  grid[4][4] = new Piece ("white");
+  return grid;
 }
 
 /**
@@ -37,13 +42,15 @@ Board.DIRS = [
  * Checks if a given position is on the Board.
  */
 Board.prototype.isValidPos = function (pos) {
+  return (pos[0] >= 0 && pos[0] <= 7) && (pos[1] >= 0 && pos[1] <= 7);
 };
-
 /**
  * Returns the piece at a given [x, y] position,
  * throwing an Error if the position is invalid.
  */
 Board.prototype.getPiece = function (pos) {
+  if (!this.isValidPos(pos)) throw Error("Not valid pos!");
+  return this.grid[pos[0]][pos[1]];
 };
 
 /**
