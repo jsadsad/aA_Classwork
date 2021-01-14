@@ -42,15 +42,15 @@ let doubler = function(number) {
 
 
 
-// Array#myReduce(callback[, initialValue]) 
+// Array#myReduce(callback[, initialValue])
 
-// - (like Ruby's Array#inject) receives a callback function, 
-// and optional initial value, returns an accumulator 
-// by applying the callback function 
-// to each element and the result of the last invocation of the callback 
+// - (like Ruby's Array#inject) receives a callback function,
+// and optional initial value, returns an accumulator
+// by applying the callback function
+// to each element and the result of the last invocation of the callback
 // (or initial value if supplied)
 
-// initialValue is optional and should default 
+// initialValue is optional and should default
 // to the first element of the array if not provided
 
 // examples:
@@ -125,4 +125,3 @@ console.log([1, 2, 3].myReduce(function (acc, el) {
 console.log([1, 2, 3].myReduce(function (acc, el) {
   return acc + el;
 }, 25) ); // => 31
-
