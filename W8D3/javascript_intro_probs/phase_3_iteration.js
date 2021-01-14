@@ -1,4 +1,6 @@
-// Array#bubbleSort - receives an array, returns a sorted array by implementing bubble sort sorting algorithm
+// Array#bubbleSort 
+// - receives an array, returns a sorted array 
+// by implementing bubble sort sorting algorithm
 Array.prototype.bubbleSort = function() {
 
   let arrClone = [];
@@ -23,5 +25,26 @@ Array.prototype.bubbleSort = function() {
   }
   return arrClone;
 }
-const testArray = [100, 2, 459]
-console.log(testArray.bubbleSort()); // [2, 100, 459]
+// const testArray = [100, 2, 459]
+// console.log(testArray.bubbleSort()); // [2, 100, 459]
+
+
+
+// String#substrings 
+// - receives a string, returns an array of all substrings
+
+String.prototype.substrings = function() {
+
+  let substringsArr = [];
+
+  for (let i = 0; i < this.length; i++) {
+    for (let j = i + 1; j <= this.length; j++) {
+      substringsArr.push(this.slice(i, j));
+    }
+  }
+
+  return substringsArr;
+}
+
+// Test
+// console.log("Hello".substrings()); // ["H", "He", ... "lo", "o"]
