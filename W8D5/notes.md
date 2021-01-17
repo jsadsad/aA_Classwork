@@ -22,9 +22,9 @@ A function _IS_ an object in JavaScript.
 - Bind: `func.bind(newContext)(arg1, arg2)`
 
 
-_apply_ is invoked immediate with newContext as receiver.
+_apply_ is invoked immediate with newContext as receiver. Takes array as arguments.
 
-_call_ gives the context obj to the function. Only difference with apply is that apply takes in an array and call takes arguments separated by commas.]
+_call_ gives the context obj to the function. Only difference with apply is that apply takes in an array and call takes arguments separated by commas.
 
 _bind_ assigning a new context - not invoking it. bind invoked once will get context. twice will actually invoke the function. Takes the new context as the first argument. Bind is flexible.
 
@@ -96,3 +96,5 @@ Arguments are array-alike. You can `key` into it or call `length`. Spread and re
 - `timTheDog.sayHi.call(ellieTheDog)` works.
 
 - When you call `.length` on the arguments objects, it will return 1 because it is just an ARRAY-LIKE OBJECT. When you convert it an array, it will be 2.
+
+- Any synchronous functions will happen first before any asynchronous.
