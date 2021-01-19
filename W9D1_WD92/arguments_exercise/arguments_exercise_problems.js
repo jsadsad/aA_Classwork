@@ -66,10 +66,10 @@ function curriedSum(size) {
     if (numbers.length === size) {
       return numbers.reduce((acc, el) => acc + el)
     } else {
-      return _curriedSum
+      return _curriedSum // won't be able to keep adding to numbers array
     }
   }
-  return _curriedSum // ?
+  return _curriedSum 
 }
 
 const sum = curriedSum(4)
