@@ -1,5 +1,5 @@
 # Prototypal Inheritance
-
+ 
 In JavaScript, the context of unbound functions is dependent on _THE WAY YOU CALL THE FUNCTION_
 
 Remember, context is what `this` is being referred to.

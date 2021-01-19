@@ -105,11 +105,11 @@ Function.prototype.currySpread = function(numArgs) {
     numbers.push(num);
 
     if (numbers.length === numArgs) {
-      return that(...numbers);
+      return that.apply(undefined, ...numbers);
     } else {
       return _curriedSum;
     }
   }
-  
+
   return _curriedSum
 }
