@@ -2,5 +2,7 @@ const View = require('./ttt-view.js')
 const Game = require('../../tictactoe_node_solutions/game.js')
 
   $(() => {
-    // Your code here
+    const newGame = new Game();
+    const newView = new View();
+    const containerEl = $('.ttt')
   });
