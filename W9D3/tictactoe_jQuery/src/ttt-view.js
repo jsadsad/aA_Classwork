@@ -2,6 +2,8 @@ class View {
   constructor(game, $el) {
     this.game = game;
     this.container = $el;
+
+    this.setupBoard();
   }
 
   bindEvents() {}
@@ -14,9 +16,10 @@ class View {
       for (let col = 0; col < 3; col++) {
         let $li = $("<li>")
         $li.data("pos", [row, col])
-        $ul.append($("<li>Apend</li>"));
+        $ul.append($("<li>"));
       }
     }
+    this.container.append($ul)
   }
 }
 

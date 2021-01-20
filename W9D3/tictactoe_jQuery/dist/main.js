@@ -15,7 +15,7 @@
   \*************************/
 /***/ ((module) => {
 
-eval("class View {\n  constructor(game, $el) {}\n\n  bindEvents() {}\n\n  makeMove($square) {}\n\n  setupBoard() {}\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
+eval("class View {\n  constructor(game, $el) {\n    this.game = game;\n    this.container = $el;\n\n    this.setupBoard();\n  }\n\n  bindEvents() {}\n\n  makeMove($square) {}\n\n  setupBoard() {\n    const $ul = $(\"<ul>\");\n    for (let row = 0; row < 3; row++) {\n      for (let col = 0; col < 3; col++) {\n        let $li = $(\"<li>\")\n        $li.data(\"pos\", [row, col])\n        $ul.append($(\"<li>\"));\n      }\n    }\n    this.container.append($ul)\n  }\n}\n\nmodule.exports = View;\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
 
 /***/ }),
 
@@ -79,7 +79,7 @@ eval("\nconst MoveError = function (msg) { this.msg = msg; };\n\n// MoveError re
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-eval("const View = __webpack_require__(/*! ./ttt-view.js */ \"./src/ttt-view.js\")\nconst Game = __webpack_require__(/*! ../../tictactoe_node_solutions/game.js */ \"../tictactoe_node_solutions/game.js\")\n\n  $(() => {\n    // Your code here\n  });\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const View = __webpack_require__(/*! ./ttt-view.js */ \"./src/ttt-view.js\")\nconst Game = __webpack_require__(/*! ../../tictactoe_node_solutions/game */ \"../tictactoe_node_solutions/game.js\")\n\n$(() => {\n  const newGame = new Game();\n  const containerEl = $('.ttt');\n  const newView = new View(newGame, containerEl);\n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
 })();
 
 /******/ })()
