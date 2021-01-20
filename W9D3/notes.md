@@ -1,6 +1,10 @@
 # jQuery
 
+jQuery is a JavaScript library that builds on top of the DOM's functionality.
+
 When running JavaScript code in the browser, the browser provides an API by which JavaScript code can access the HTML content of a page. This API is called the Document Object Model. The DOM API is standardized by the World Wide Web Consortium (W3C).
+
+`<script src="https://ajax.googleapis.com/ajax"/>`
 
 # DOM
 
@@ -13,6 +17,12 @@ _Take JavaScript and change HTML_
 Library since 2006. It is a JavaScript wrapper libary used for low level manipulation.
 
 Used by 73% of top 10,000,000 sites. It is supported universally supported by all browsers. It is consistent API for programmers to interface regardless of browser. Write less, do more.
+
+Whereas `document.querySelectorAll("li")` returns a NodeList, `$("li")` returns a jQuery object.
+
+THE `$` represents a wrapper function that creates jquery objects.
+
+A jQuery object, like a NodeList, is array like; you can ask for its length, and you can lookup a value by index. Like a NodeList, the items in a jQuery object are regular DOM HTMLElements.
 
 # Ways to use jQuery
 
@@ -35,3 +45,45 @@ Used by 73% of top 10,000,000 sites. It is supported universally supported by al
 - ready-style
   - input: function to run when DOM is fully loaded.
   - `$(() => alert('DOM is fully loaded'))`
+
+## Methods
+  - `const $listItems = $("li");`
+  - `jQuery#addClass`
+  - `hide` and `show`
+  - `css`
+  - `attr` and `data`
+  - `val()`
+  - `.on(event, handler)`
+
+# DOM Functionality
+
+- `document.getElementById(selector)`
+- `document.getElementsByClassName(selector)`
+- `document.querySelectorAll(selector)`
+- `.attr('type','password')`
+- `.attr('value','eat a taco')`
+- `.data`
+
+# Events
+
+This dynamic modification of the HTML document would be pointless without event handling. They describe most interactions uses can have with an app.
+
+To respond, we must install event listeners on HTML elements(`on`)
+
+_currentTarget is the element where the event is listener is attached to - the element that has the handler event on it_
+
+_target is the element that the event occured on - the event that was clicked on_
+
+Events are the means by which JavaScript can react to user behavior. Some common events:
+
+- click, dblclick
+- input, change, submit
+- keydown, keyup
+- mouseover, mousemove, mouseout
+- scroll, resize
+
+# Event Functionality
+
+- `.addEventListener("mouseover", () => {
+    alert("YOU MOUSED OVER ME!");
+  });`
