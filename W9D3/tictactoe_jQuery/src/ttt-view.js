@@ -6,9 +6,21 @@ class View {
     this.setupBoard();
   }
 
-  bindEvents() {}
+  bindEvents() {
+    this.container.on('click', 'li', (e) => {
+      this.makeMove($(e.target));
+    })
+    if (this.game.isOver()) {
+      console.log("Game over");
+    }
+  }
 
-  makeMove($square) {}
+  makeMove($square) {
+    const currentPlayer = this.game.currentPlayer
+    //have to use playMove
+    debugger
+    this.game.playMove($square)
+  }
 
   setupBoard() {
     const $ul = $("<ul>");
