@@ -1,5 +1,5 @@
-// Array#bubbleSort 
-// - receives an array, returns a sorted array 
+// Array#bubbleSort
+// - receives an array, returns a sorted array
 // by implementing bubble sort sorting algorithm
 Array.prototype.bubbleSort = function() {
 
@@ -30,7 +30,7 @@ Array.prototype.bubbleSort = function() {
 
 
 
-// String#substrings 
+// String#substrings
 // - receives a string, returns an array of all substrings
 
 String.prototype.substrings = function() {
@@ -42,7 +42,6 @@ String.prototype.substrings = function() {
       substringsArr.push(this.slice(i, j));
     }
   }
-
   return substringsArr;
 }
 
