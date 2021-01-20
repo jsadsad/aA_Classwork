@@ -6,9 +6,11 @@ Remember, context is what `this` is being referred to.
 
 _Callbacks are always invoked in function style_
 
-There are 5 styles: function, menthod, constructor, call, apply.
+There are 5 styles: function, method, constructor, call, apply.
 
 Functions that are needed to bind: method
+
+Save `let that = this`
 
 # Currying
 
@@ -33,3 +35,12 @@ Functions that are needed to bind: method
 - `Cat.prototype = Animal.prototype` is inheritance.
 
 - `new` assigns the` __proto__` of the new instance(obj) to Constructor's prototype.
+
+# Surrogating
+
+1. Define
+2. Modify the prototype
+3. blank slate. Invoke the calls with `Surrogate()`
+4.  We reset the constructor prototype back to be the child. This cleans it up.
+
+

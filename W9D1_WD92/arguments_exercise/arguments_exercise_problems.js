@@ -39,8 +39,9 @@ Function.prototype.myBind = function(context) {
   const that = this
   let bindArgs = Array.from(arguments).slice(1)
   return function callback() {
-      const callArgs = Array.from(arguments)
-      return that.apply(context, bindArgs.concat(callArgs))
+    const callArgs = Array.from(arguments) // no slice because we're not taking in paramters. anything that gets passed in, we would want.
+    return that.apply(context, bindArgs.concat(callArgs)) //remember that apply takes in array, second array is new context
+    // with our bindargs and callargs concatted, we return it.
   }
 }
 

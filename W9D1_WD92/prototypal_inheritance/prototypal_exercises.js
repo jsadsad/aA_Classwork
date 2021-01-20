@@ -43,3 +43,10 @@ astroid.move();
 // The Ship and Asteroid prototypes should not be instances of MovingObject.
 
 // You'll be writing an inherits method again for Asteroids.
+
+// function simpleInherits(parentClass, ChildClass) {
+//     function Surrogate() {}
+//     Surrogate.prototype = ParentClass.prototype
+//     ChildClass.prototype = new Surrogate()
+//     ChildClass.prototype.constructor = ChildClass
+// }
