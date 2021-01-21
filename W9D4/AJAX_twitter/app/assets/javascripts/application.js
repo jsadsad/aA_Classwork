@@ -9,6 +9,13 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+
+// All required JavaScript files are listed in the comment block at the top.This works in a similar fashion to placing < script > tags in our HTML, except that Rails compiles them all into a single file for production.
+
+// serializejson is for submitting forms
+// require_tree is to access all the js files from this folder
+
 //= require jquery
 //= require jquery_ujs
+//= require jquery.serializejson
+//= require_tree .

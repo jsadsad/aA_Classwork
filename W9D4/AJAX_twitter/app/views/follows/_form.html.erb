@@ -1,4 +1,4 @@
-<% if current_user.follows?(user) %>
+<!-- <% if current_user.follows?(user) %>
   <form action="<%= user_follow_url(user) %>" method="post">
     <input
         type="hidden"
@@ -16,3 +16,13 @@
     <input type="submit" value="Follow">
   </form>
 <% end %>
+
+<form action="<%= user_follow_url(user) %>" method="post">
+    <input
+        type="hidden"
+        name="authenticity_token"
+        value="<%= form_authenticity_token %>">
+    <input type="submit" value="Follow">
+  </form> -->
+
+<button class="follow-toggle"></button>
