@@ -17,13 +17,12 @@ class View {
     const pos = $square.data("pos") //getter
     const currentPlayer = this.game.currentPlayer
     //have to use playMove
-    this.game.playMove($square)
+    this.game.playMove(pos)
 
     $square.addClass("complete")
     if (this.game.isOver()) {
-      console.log("Game over");
+      alert("game is over")
     }
-
   }
 
   setupBoard() {
