@@ -16,3 +16,7 @@ li {
 li:hover {
     background: yellow;
 }
+
+.complete {
+    background: white;
+}

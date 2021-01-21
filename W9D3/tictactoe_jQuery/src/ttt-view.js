@@ -4,22 +4,26 @@ class View {
     this.container = $el;
 
     this.setupBoard();
+    this.bindEvents();
   }
 
   bindEvents() {
-    this.container.on('click', 'li', (e) => {
-      this.makeMove($(e.target));
-    })
-    if (this.game.isOver()) {
-      console.log("Game over");
-    }
+    this.container.on('click', 'li', (e => {
+      this.makeMove($(e.currentTarget));
+    }))
   }
 
   makeMove($square) {
+    const pos = $square.data("pos") //getter
     const currentPlayer = this.game.currentPlayer
     //have to use playMove
-    debugger
     this.game.playMove($square)
+
+    $square.addClass("complete")
+    if (this.game.isOver()) {
+      console.log("Game over");
+    }
+
   }
 
   setupBoard() {
@@ -27,8 +31,8 @@ class View {
     for (let row = 0; row < 3; row++) {
       for (let col = 0; col < 3; col++) {
         let $li = $("<li>")
-        $li.data("pos", [row, col])
-        $ul.append($("<li>"));
+        $li.data("pos", [row, col]) //setter
+        $ul.append($li);
       }
     }
     this.container.append($ul)
