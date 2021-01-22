@@ -6,23 +6,44 @@ class FollowToggle {
         this.render()
     }
 
-
     // events when user clicks on follow or unfollow go here
-    onClick() {
-        const $el = $('.follow-toggle')
+    handleClick() {
+    //     Prevent the default action.
+    //     Make a $.ajax request to POST /users/: id / follow if we are not following the user(check followState), 
+    // else, it should make a DELETE request.
+    // On success of the POST / DELETE, we should toggle the followState and re - render.
+
+        const $el = $('button.follow-toggle')
+
         $el.on('click', (e) => {
-            if(this.followState === 'followed'){
-                this.followState = 'unfollowed';
+            e.preventDefault()
+            if(e.followState === 'followed'){
+                e.followState = 'unfollowed';
+                $ajax({
+                    method: "DELETE",
+                    url: `/user_follow/${this.userId}`,
+                    dataType: "json"
+                })
             } else {
-                this.followState = 'followed'
+                e.followState = 'followed'
+                $ajax({
+                    method: "POST",
+                    url: `/user_follow/${this.userId}`,
+                    dataType: "json"
+                })
             }
         });
     }
 
     render() {
-        debugger
+        //where we will display "Follow" or "Unfollow" depending if user follows already
+        const $el = $('button.follow-toggle')
+        if ($el.followState === 'followed') {
+            $el.text("Unfollow")
+        } else {
+            $el.text("Follow")
+        }
     }
-    
 }
 
 module.exports = FollowToggle;
