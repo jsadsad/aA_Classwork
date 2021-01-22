@@ -24,7 +24,7 @@ jQuery is low level(fast), rapid development, and concise. _You don't need jQuer
 # Methods
 
 - `getElementById(idString)` - returns the HTML element of given id.
-
+``
 - `getElementsByClassName(classString)` returns an HTML collection. This can not be iterated.
 
 - `querySelector(selector)` returns the first selector. # or .
