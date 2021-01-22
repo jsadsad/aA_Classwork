@@ -6,7 +6,7 @@ export const htmlGenerator = (string, htmlElement) => {
     const text = document.createTextNode(string)
     pTag.appendChild(text)
     htmlElement.appendChild(pTag)
-    debugger
+    // debugger
 };
 
 htmlGenerator('Cool stuff', partyHeader);
