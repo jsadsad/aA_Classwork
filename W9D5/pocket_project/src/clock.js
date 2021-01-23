@@ -17,7 +17,6 @@ export class Clock {
    //this.printTime();
     htmlGenerator(this.printTime(), clockHeader);
 
-
     // 4. Schedule the tick at 1 second intervals.
     setInterval(this._tick.bind(this), 1000);
   }
