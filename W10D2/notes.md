@@ -4,6 +4,8 @@ React is a frontend libary for building / managing UI. As the user interfaces wi
 
 _Changing what the user sees in a single page application_
 
+Each component we create should be independent, reusable, and an isolate piece of UI.
+
 # Why do we like React
 
 - React abstracts away low-level DOM manipulation allowing developer to focus on how app should look and behave.
@@ -49,11 +51,32 @@ Changes JSX to plain old javascript as well as ES6 into older versions.
 
 # Components
 
+- Should be pure functions - deterministic. Same input => same input always.
 - Accepts a single "props" object and returns a React element.
 - Create via either clases or functions.
 - must have a `render()`
+- `super(props)` makes sure the value of this.props defined.
+- Components will re-render when their state or props change.
 
 # State and Props
 
 - _Props_ refer to information that the component receives from a parent component.
 - _State_ refers to information that the component itself manages.
+
+# setState
+
+This is asynchrounous. The first paramet is an object that will be merged into the new state. An optional callback to execute after the new State is set.
+
+State is local and is initialized inside the constructor function of a class component.
+
+Constructor is the _only_ time you say `this.state =`
+
+# props
+
+Passed to the component when it is created.
+
+We have access to those props either by `this.props` or props(class vs functional)
+
+_Do not_ tie parts of props to a component's state.
+
+Component should never directly modify its props.
