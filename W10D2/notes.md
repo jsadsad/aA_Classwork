@@ -80,3 +80,15 @@ We have access to those props either by `this.props` or props(class vs functiona
 _Do not_ tie parts of props to a component's state.
 
 Component should never directly modify its props.
+
+# MISC
+
+Babel is doing the job of transpiling JS to be compatible with all browsers.
+
+Every react class needs a `render`
+
+We give optional argument to set state because of asynchrounous - we give it a callback.
+
+componentWillUnmount is typical used for clean up work. It's about unmount so what should we do?
+
+The order: constructor => render => componentDidMount
