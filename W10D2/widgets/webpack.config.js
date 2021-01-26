@@ -1,9 +1,10 @@
 var path = require('path');
 
 module.exports = {
-    entry: './widgets.jsx',
+    entry: './frontend/widgets.jsx',
     output: {
-        filename: './bundle.js',
+        filename: './dist/bundle.js',
+        path: path.resolve(__dirname)
     },
     module: {
         rules: [
