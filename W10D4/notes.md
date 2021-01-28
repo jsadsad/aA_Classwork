@@ -2,15 +2,19 @@
 
 To learn, we need to separate between React and Redux.
 
+`Redux` makes it easy to reason about complex data and UI changes.
+
 You will need to manually update the state.
 
-Redux is the most popular implementation of the Flux architecture.
+`Redux` is the most popular implementation of the Flux architecture.
 
-Remember, State is an object. Application state is represented as one giant plain old JavaScript object.
+Remember, `State` is an object. Application state is represented as one giant plain old `JavaScript` object.
 
 Redux copies state and modify it. Throw away old state.
 
 We don't want to mutate the old state because it wants to keep track of modifications.
+
+`Redux` is good since your data changes over time and you want a single souce of truth. The same data is assembled from diffrent sources and can be rendered in several places throughout the UI.
 
 # Application State
 
@@ -45,7 +49,7 @@ Takes care care of whole state or slice of state.
 `Object.freeze(oldState)` helpful if updating old state.
 `const nextState = Object.assign({}, oldState)` will create a copy.
 
-I will need to merge all reducers together into `RootReducer` that will be a function that returns state.
+I will need to merge all reducers together into `RootReducer` that will be a function that returns state using `{ combineReducers } from 'redux'`
 
 `Enhancer` can be the third optional argument.
 
