@@ -1,0 +1,9 @@
+
+.tile {
+  border-style: inset;
+  border-style: outset;
+}
+
+.bombed {
+  color: red;
+}
