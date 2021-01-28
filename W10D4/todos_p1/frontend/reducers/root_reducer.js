@@ -4,8 +4,7 @@ import todoReducer from './todos_reducer'
 
 
 const rootReducer = combineReducers({
-    todos: todosReducer,
-    todo: todoReducer
+    todos: todosReducer //just one entity
 })
 
 
