@@ -65,6 +65,15 @@ Store for our redux app.
 
 Sometimes, you want `preloadedState` when you open state because it always live there. You will need to wrap it in other object.
 
+# The Cycle
+
+Every action goes to every reducer. If the action doesn't have a corresponding type, it is jsut going to return the old slice of state.
+
+1. Actions are objects. Every action hits every reducer. The only thing necessary is the key of type.
+
+2. We should the store's dispatch to send an action to root reducer.
+
+
 # Structure
 
 1. create a `frontend` folder with an `entry` file for React
