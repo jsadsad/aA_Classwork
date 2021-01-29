@@ -10,14 +10,19 @@ const todos = {
 	todos: { //key = id, values = objects
 		1: {
 			id: 1,
-			body: 'learn selectors',
+			title: 'learn selectors',
 			done: 'done'
 		},
 		2: {
 			id: 2,
-			body: 'look good doing it',
+			title: 'look good doing it',
 			done: 'undone'
-		}
+        },
+        3: {
+            id: 3,
+            title: "be smart",
+            done: 'done'
+        }
 	},
 }
 
