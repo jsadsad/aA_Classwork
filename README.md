@@ -48,3 +48,7 @@ Schedule in _Weeks_:
 ![Big O Notation](VISUALS/Big_O_Complexity.jpeg)
 
 ![Rails MVC](VISUALS/Rails_MVC.png)
+
+![HTML_DOM_JAVASCRIPT](VISUALS/HTML_DOM_JAVASCRIPT.png)
+
+![REDUX](VISUALS/redux_diagram.gif)
