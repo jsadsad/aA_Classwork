@@ -49,6 +49,6 @@ Schedule in _Weeks_:
 
 ![Rails MVC](VISUALS/Rails_MVC.png)
 
-![HTML_DOM_JAVASCRIPT](VISUALS/HTML_DOM_JAVASCRIPT.png)
+![HTML_DOM_JAVASCRIPT](VISUALS/HTML_DOM_JavaScript.png)
 
 ![REDUX](VISUALS/redux_diagram.gif)
