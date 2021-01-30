@@ -1,4 +1,5 @@
 import React from 'react';
+import TodoForm from './todo_form'
 
 const TodoList = (props) => {
     return (
@@ -9,6 +10,7 @@ const TodoList = (props) => {
                     return <li key={todo.id}>Title: {todo.title}</li>
                 })}
             </ul>
+            <TodoForm receiveTodo={props.receiveTodo}/> 
         </div>
     )
 } 
