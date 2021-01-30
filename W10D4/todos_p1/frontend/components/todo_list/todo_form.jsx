@@ -1,10 +1,12 @@
 import React from 'react'
+import {uniqueId} from '../../utils/id_util'
+
 
 class TodoForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: Math.floor(Math.random() * 1000000),
+            id: uniqueId(),
             title: ''
         }
         this.updateTitle = this.updateTitle.bind(this)
@@ -16,12 +18,10 @@ class TodoForm extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault()
-        this.props.receiveTodo(this.state)
-        this.state = {
-            id: Math.floor(Math.random() * 1000000),
-            title: ''
-        }
+        e.preventDefault();
+
+        this.props.receiveTodo(this.state);
+        this.setState({ id: Math.floor(Math.random() * 100000000), title: ''})
 
     }
 
@@ -32,7 +32,7 @@ class TodoForm extends React.Component {
                 <label>Title: 
                     <input onChange={this.updateTitle} type="text" value={this.state.title}/>
                 </label>
-                <input type="submit" value="Add Todo"/>
+                <input type="submit" value="Add Todo"></input>
             </form>
         )
     }
