@@ -24,3 +24,12 @@ Your PM will regularly review your progress and work and be there to offer guida
 4. 4 Features and Total of 7 MVPs
  - 3 are the same for everyone: Production README, deployed to Heroku, frontend and backend auth.
  - 4 MVPS are unique to each app and each represent a feature of the app.
+
+# MVPS (Minimum Viable Product)
+
+- The order you plan on implementing your features with detailed sub-points
+- Include expectedx time to implement. Be generous with estimates.
+- one feature must be a full CRUD cycle.
+- 2 days for major features(post, comments, users, etc)
+- 1 day for minor features (likes, follows, profiles, etc)
+- include bonus(stretch) features that you will implement with enough time

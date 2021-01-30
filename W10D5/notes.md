@@ -11,6 +11,10 @@ Remember, Redux is one single source of truth. State of Redux is called Global S
 
 The state of React is a piece of data that the specific component needs.
 
+In react, the local state lives in each component.
+
+In redux, global state is the single source of truth that lives in the global redux store slice of state.
+
 # State to Components
 
 - `Provider`: takes in store as a prop and provides the store to the component hierarchy.
@@ -31,6 +35,7 @@ We only need to given the speficied component the state change.
 2. _Container_
 - the role is to provide component relevant slices of state to component via `mapStateToProps`.
 - provides functions that `dispatch` actions from a presentation componet via `mapDispatchToProps`
+- a way to connect our React components WITH the applcation state.
 
 # Process (?)
 
