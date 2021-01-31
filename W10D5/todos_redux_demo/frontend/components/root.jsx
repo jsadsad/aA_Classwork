@@ -6,6 +6,10 @@ const Root = ({ store }) => (
   <Provider store={store}>
     <App />
   </Provider>
+
+
 );
+
+// provider is the React.Context
 
 export default Root;

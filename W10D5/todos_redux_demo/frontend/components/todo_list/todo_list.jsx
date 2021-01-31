@@ -14,8 +14,8 @@ class TodoList extends React.Component {
           receiveTodo={ receiveTodo } />
       )
     );
-      debugger
-    return(
+    debugger
+    return (
       <div>
         <ul className="todo-list">
           { todoItems }
@@ -27,3 +27,31 @@ class TodoList extends React.Component {
 }
 
 export default TodoList;
+
+
+// import { useDispatch, useSelector } from 'react-red
+
+// export const TodoListFn = (props) => {
+//   const todos = useSelector(store => {
+//     return allTodos(store)
+//   })
+//   const dispatch = useDispatch()
+//   const receiveTodo = todo => dispatch({ type: 'RECEIVE_TODO', todo})
+
+//   const todoItems = todos.map(todo => (
+//       <TodoListItem
+//         key={`todo-list-item${todo.id}`}
+//         todo={todo}
+//         receiveTodo={ receiveTodo } />
+//     )
+//   )
+  
+//   return (
+//     <div>
+//       <ul className="todo-list">
+//         { todoItems }
+//       </ul>
+//       <TodoForm receiveTodo={ receiveTodo }/>
+//     </div>
+//   )
+// }

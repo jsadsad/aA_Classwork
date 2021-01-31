@@ -187,7 +187,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _todo_list_todo_list_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todo_list/todo_list_container */ "./frontend/components/todo_list/todo_list_container.js");
 
-
+ // import { createStore, applyMiddleware } from 'redux'
+// import { Provider, connect } from 'react-redux'
+// const myReducer = (state = {}, action) => {
+//   switch(action.type) {
+//     case 'HELLO': {
+//       return {
+//         ...state,
+//         said: 'hello'
+//       }
+//       break;
+//     }
+//     default:
+//       return state
+//   }
+// }
+// const middleware = () => {}
+// const Root = () => {
+//   const store = createStore(combineReducers({myReducer}), {}, applyMiddleware(middleware))
+//   return <Provider store={store}><App /></Provider>
+// }
+// const MyComponent = () => {
+// }
+// const TodoListContainer = connect(() => { return {}}, () => { return {}})(MyComponent)
 
 var App = function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -221,7 +243,8 @@ var Root = function Root(_ref) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_1__["Provider"], {
     store: store
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_app_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null));
-};
+}; // provider is the React.Context
+
 
 /* harmony default export */ __webpack_exports__["default"] = (Root);
 
@@ -726,7 +749,8 @@ var TodoForm = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       var todo = Object.assign({}, this.state, {
         id: Object(_util_id_generator__WEBPACK_IMPORTED_MODULE_0__["uniqueId"])()
-      });
+      }); //first argument is the new state, second argument are the values that have been submitted
+
       this.props.receiveTodo(todo);
       this.setState({
         title: "",
@@ -846,7 +870,29 @@ var TodoList = /*#__PURE__*/function (_React$Component) {
   return TodoList;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (TodoList);
+/* harmony default export */ __webpack_exports__["default"] = (TodoList); // import { useDispatch, useSelector } from 'react-red
+// export const TodoListFn = (props) => {
+//   const todos = useSelector(store => {
+//     return allTodos(store)
+//   })
+//   const dispatch = useDispatch()
+//   const receiveTodo = todo => dispatch({ type: 'RECEIVE_TODO', todo})
+//   const todoItems = todos.map(todo => (
+//       <TodoListItem
+//         key={`todo-list-item${todo.id}`}
+//         todo={todo}
+//         receiveTodo={ receiveTodo } />
+//     )
+//   )
+//   return (
+//     <div>
+//       <ul className="todo-list">
+//         { todoItems }
+//       </ul>
+//       <TodoForm receiveTodo={ receiveTodo }/>
+//     </div>
+//   )
+// }
 
 /***/ }),
 
@@ -864,29 +910,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_todo_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/todo_actions */ "./frontend/actions/todo_actions.js");
 /* harmony import */ var _reducers_selectors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../reducers/selectors */ "./frontend/reducers/selectors.js");
 
- // Actions
+ // container is redux. Component that is higher order component. 
+// containers listen to provider. 
+// Actions
 
 
 
 
-var mapStateToProps = function mapStateToProps(state) {
+var mapStateToProps = function mapStateToProps(store) {
   debugger;
   return {
-    todos: Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_3__["allTodos"])(state),
-    state: state
+    todos: Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_3__["allTodos"])(store),
+    store: store
   };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     receiveTodo: function receiveTodo(todo) {
-      debugger;
       return dispatch(Object(_actions_todo_actions__WEBPACK_IMPORTED_MODULE_2__["receiveTodo"])(todo));
     }
   };
-};
+}; // connect returns a Higher Order Component of the given component (ie. TodoList)
+// TodoListContainer props: { todos, store, receiveTodo }
+// Action -> Middleware -> Reducer -> Store -> Container -> Action
+// redux-thunk Dan Abramov
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_todo_list__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+var TodoListContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, // {todos, store}
+mapDispatchToProps // {receiveTodo}
+)(_todo_list__WEBPACK_IMPORTED_MODULE_1__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (TodoListContainer);
 
 /***/ }),
 
@@ -1033,11 +1087,19 @@ var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])(
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "allTodos", function() { return allTodos; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stepsByTodoId", function() { return stepsByTodoId; });
+// export const allTodos = (store) => Object.keys(store.todos).map(key => store.todos[key]);
+// todos = {
+//   'idA': {}
+//   'idB': {}
+// }
+// selector is a function that takes the store object as parameter and returns a value from the store
 var allTodos = function allTodos(_ref) {
   var todos = _ref.todos;
-  return Object.keys(todos).map(function (id) {
-    return todos[id];
-  });
+  var todosIds = Object.keys(todos); // ['idA', 'idB']
+
+  return todosIds.map(function (todosId) {
+    return todos[todosId];
+  }); // [{ id: 'idA', ...}, {id: 'idB', ...}]
 };
 var stepsByTodoId = function stepsByTodoId(_ref2, todo_id) {
   var steps = _ref2.steps;
@@ -1132,9 +1194,10 @@ __webpack_require__.r(__webpack_exports__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
+var initialState = {};
 
 var todosReducer = function todosReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
   var nextState = {};

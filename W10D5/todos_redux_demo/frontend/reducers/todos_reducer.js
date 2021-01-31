@@ -3,7 +3,9 @@ import { RECEIVE_TODOS,
          REMOVE_TODO,
          TODO_ERROR } from '../actions/todo_actions';
 
-const todosReducer = (state = {}, action) => {
+const initialState = {}
+
+const todosReducer = (state = initialState, action) => {
   Object.freeze(state);
   let nextState = {};
   debugger
