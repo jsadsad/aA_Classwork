@@ -33,3 +33,9 @@ Your PM will regularly review your progress and work and be there to offer guida
 - 2 days for major features(post, comments, users, etc)
 - 1 day for minor features (likes, follows, profiles, etc)
 - include bonus(stretch) features that you will implement with enough time
+
+# Schema
+- tables
+- name of columns and data types
+- validations and indices
+- standard vs joins table
