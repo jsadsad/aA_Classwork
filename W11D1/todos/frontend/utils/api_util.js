@@ -3,14 +3,16 @@ import { $CombinedState } from 'redux'
 export const fetchTodos = () => {
     return $.ajax({
         method: "GET",
-        url: "api/todos",
+        url: "api/todos"
     })
 }
 
 export const createTodo = (todo) => {
     return $.ajax({
         method: "POST",
-        url: "api/todos",
-        data: {todo: todo},
-    })
-}
+        url: "/api/todos",
+        data: {
+            todo: todo
+        }
+    });
+};

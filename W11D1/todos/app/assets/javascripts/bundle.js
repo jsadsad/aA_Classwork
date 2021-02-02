@@ -303,6 +303,8 @@ var TodoForm = /*#__PURE__*/function (_React$Component) {
       title: ''
     };
     _this.updateTitle = _this.updateTitle.bind(_assertThisInitialized(_this));
+    _this.updateBody = _this.updateBody.bind(_assertThisInitialized(_this));
+    _this.updateDone = _this.updateDone.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -315,14 +317,24 @@ var TodoForm = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
+    key: "updateBody",
+    value: function updateBody(e) {
+      this.setState({
+        body: e.target.value
+      });
+    }
+  }, {
+    key: "updateDone",
+    value: function updateDone(e) {
+      this.setState({
+        done: e.target.value
+      });
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      this.props.receiveTodo(this.state);
-      this.setState({
-        id: Math.floor(Math.random() * 100000000),
-        title: ''
-      });
+      this.props.createTodo(this.state); // this.props.receiveTodo(this.state)
     }
   }, {
     key: "render",
@@ -333,6 +345,14 @@ var TodoForm = /*#__PURE__*/function (_React$Component) {
         onChange: this.updateTitle,
         type: "text",
         value: this.state.title
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Body:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.updateBody,
+        type: "text",
+        value: this.state.body
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Done?", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.updateDone,
+        type: "text",
+        value: this.state.done
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: "Add Todo"
@@ -407,8 +427,8 @@ var TodoList = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: todo.id
         }, "Title: ", todo.title);
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_todo_form__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        receiveTodo: this.props.receiveTodo,
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_todo_form__WEBPACK_IMPORTED_MODULE_1__["default"] // receiveTodo={this.props.receiveTodo}
+      , {
         createTodo: this.props.createTodo
       }));
     }
@@ -446,10 +466,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    receiveTodo: function receiveTodo(todo) {
-      return dispatch(Object(_actions_todo_actions__WEBPACK_IMPORTED_MODULE_2__["receiveTodo"])(todo));
-    },
-    //{receiveTodo}
+    // receiveTodo: todo => dispatch(receiveTodo(todo)), //{receiveTodo}
     fetchTodos: function fetchTodos(todos) {
       return dispatch(Object(_actions_todo_actions__WEBPACK_IMPORTED_MODULE_2__["fetchTodos"])(todos));
     },
@@ -739,7 +756,7 @@ var fetchTodos = function fetchTodos() {
 var createTodo = function createTodo(todo) {
   return $.ajax({
     method: "POST",
-    url: "api/todos",
+    url: "/api/todos",
     data: {
       todo: todo
     }

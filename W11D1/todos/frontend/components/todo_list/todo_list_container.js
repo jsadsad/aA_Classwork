@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    receiveTodo: todo => dispatch(receiveTodo(todo)), //{receiveTodo}
+    // receiveTodo: todo => dispatch(receiveTodo(todo)), //{receiveTodo}
     fetchTodos: todos => dispatch(fetchTodos(todos)),
     createTodo: todo => dispatch(createTodo(todo)),
 
