@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import configureStore from './store/store';
-import { receiveTodo, receiveTodos, removeTodo} from './actions/todo_actions'
+// import { receiveTodo, receiveTodos, removeTodo} from './actions/todo_actions'
 import { receiveStep, receiveSteps, removeStep} from './actions/step_actions'
 import Root from './components/root'
 import {allTodos} from './reducers/selectors'
 import {fetchTodos} from "./utils/api_util"
+import * as TODO_ACTIONS from './actions/todo_actions';
 
 const todos = {
 	todos: { //key = id, values = objects
@@ -33,13 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(<Root store={store}/>, root )
 
     window.store = configureStore()
-    window.receiveTodo = receiveTodo
-    window.receiveTodos = receiveTodos
-    window.removeTodo = removeTodo
+    // window.receiveTodo = receiveTodo
+    // window.receiveTodos = receiveTodos
+    // window.removeTodo = removeTodo
     window.receiveStep = receiveStep
     window.receiveSteps = receiveSteps
     window.removeStep = removeStep
     window.allTodos = allTodos
     window.fetchTodos = fetchTodos
+    window.TODO_ACTIONS = TODO_ACTIONS
 
 })

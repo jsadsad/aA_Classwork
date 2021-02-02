@@ -1,4 +1,4 @@
-import {$CombinedState} from 'redux'
+import { $CombinedState } from 'redux'
 
 export const fetchTodos = () => {
     return $.ajax({

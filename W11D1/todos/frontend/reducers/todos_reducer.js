@@ -6,7 +6,7 @@ const todosReducer = (state = {}, action) => { //action from todo_actions.js
     switch (action.type) {
         case RECEIVE_TODOS: //array of multiple
             action.todos.forEach((todo) => {
-                nextState[action.todo.id]
+                nextState[action.todo.id] = action.todo
                 return nextState
             })
         case RECEIVE_TODO:
@@ -23,18 +23,3 @@ const todosReducer = (state = {}, action) => { //action from todo_actions.js
   };
   
   export default todosReducer;
-
-const initialState = {
-    1: {
-        id: 1,
-        title: "wash car",
-        body: "with soap",
-        done: false
-    },
-    2: {
-        id: 2,
-        title: "wash dog",
-        body: "with shampoo",
-        done: true
-    }
-};

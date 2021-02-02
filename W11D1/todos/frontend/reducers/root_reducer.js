@@ -4,7 +4,7 @@ import stepsReducer from './steps_reducer'
 
 
 
-const rootReducer = combineReducers({
+const rootReducer = combineReducers({ //
     todos: todosReducer, //just one entity
     steps: stepsReducer
 })

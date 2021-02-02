@@ -278,3 +278,215 @@ Processing by Api::TodosController#index as JSON
 Completed 200 OK in 11ms (Views: 3.5ms | ActiveRecord: 6.8ms)
 
 
+Started GET "/" for ::1 at 2021-02-01 15:01:27 -0800
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jsadsad/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 5514ms (Views: 5511.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 15:02:41 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (2.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 55ms (Views: 20.3ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 15:13:51 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (2.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2021-02-01 15:17:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1849ms (Views: 1843.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 15:18:18 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (3.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 15:18:25 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 15:18:37 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 15:18:58 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 15:22:41 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-02-01 15:26:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1671ms (Views: 1666.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-01 15:26:19 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1330ms (Views: 1323.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 15:26:24 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2021-02-01 15:27:39 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 210ms (Views: 197.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 15:37:28 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-01 15:38:24 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1101ms (Views: 1093.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-01 15:40:08 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1583ms (Views: 1572.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-01 15:41:04 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1157ms (Views: 1134.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 15:41:10 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 15:41:21 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2021-02-01 15:48:20 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 1659ms (Views: 1650.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 15:48:41 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-01 15:50:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1212ms (Views: 1206.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-01 15:50:49 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 1475ms (Views: 1470.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 15:51:01 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (3.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-01 15:54:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 71ms (Views: 66.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 15:54:09 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-02-01 15:57:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 1529ms (Views: 1507.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 15:57:48 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-01 16:02:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 1421ms (Views: 1415.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-02-01 16:02:56 -0800
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (2.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 2.8ms)
+
+

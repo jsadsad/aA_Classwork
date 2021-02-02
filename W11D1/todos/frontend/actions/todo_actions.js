@@ -2,6 +2,8 @@ export const RECEIVE_TODOS = "RECEIVE_TODOS";
 export const RECEIVE_TODO = "RECEIVE_TODO";
 export const REMOVE_TODO = "REMOVE_TODO";
 
+import * as apiUtil from '../utils/api_util'
+
 export const receiveTodos = (todos) => { //recieves an array of todos
     return {
       type: RECEIVE_TODOS, //type property pointing to RECEIVE_TODOS
@@ -28,4 +30,13 @@ export const removeTodo = (todoId) => { //recieves only a signular todo property
     type: REMOVE_TODO,
     todoId
   };
-}; 
+};
+
+export const fetchTodos = () => { //fetching from the database
+  return (dispatch) => {
+    return apiUtil.fetchTodos() //gets all like [{…}, {…}, {…}, {…}, {…}, {…}]
+    .then(todos => { //promise to get the response and then dispatch the todos that we just got back from the database
+      dispatch(receiveTodos(todos))
+    })
+  }
+}
