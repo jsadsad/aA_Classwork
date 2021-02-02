@@ -6,9 +6,9 @@ const todosReducer = (state = {}, action) => { //action from todo_actions.js
     switch (action.type) {
         case RECEIVE_TODOS: //array of multiple
             action.todos.forEach((todo) => {
-                nextState[action.todo.id] = action.todo
-                return nextState
+                nextState[todo.id] = todo
             })
+            return nextState
         case RECEIVE_TODO:
             nextState[action.todo.id] = action.todo
             return nextState

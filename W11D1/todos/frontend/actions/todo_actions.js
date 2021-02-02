@@ -40,3 +40,10 @@ export const fetchTodos = () => { //fetching from the database
     })
   }
 }
+
+export const createTodo = (todo) => (dispatch, getState) => {
+	return apiUtil.createTodo(todo)
+		.then( todo => dispatch(receiveTodo(todo)))
+		// .catch( (error) => console.log(error))
+		// .fail( (error) => console.log(error)) for jquery ajax 
+}

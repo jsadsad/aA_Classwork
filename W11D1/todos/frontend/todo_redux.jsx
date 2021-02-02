@@ -5,7 +5,7 @@ import configureStore from './store/store';
 import { receiveStep, receiveSteps, removeStep} from './actions/step_actions'
 import Root from './components/root'
 import {allTodos} from './reducers/selectors'
-import {fetchTodos} from "./utils/api_util"
+import {fetchTodos} from "./actions/todo_actions"
 import * as TODO_ACTIONS from './actions/todo_actions';
 
 const todos = {
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const store = configureStore(todos)
     ReactDOM.render(<Root store={store}/>, root )
 
-    window.store = configureStore()
+    window.store = store //double store. only call configureStore once
     // window.receiveTodo = receiveTodo
     // window.receiveTodos = receiveTodos
     // window.removeTodo = removeTodo
