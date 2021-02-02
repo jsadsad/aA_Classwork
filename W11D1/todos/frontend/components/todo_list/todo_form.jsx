@@ -6,8 +6,9 @@ class TodoForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: uniqueId(),
-            title: ''
+            title: '',
+            body: '',
+            done: ''
         }
         this.updateTitle = this.updateTitle.bind(this)
         this.updateBody = this.updateBody.bind(this)
@@ -39,12 +40,15 @@ class TodoForm extends React.Component {
                 <label>Title: 
                     <input onChange={this.updateTitle} type="text" value={this.state.title}/>
                 </label>
+                <br/>
                 <label>Body:
                     <input onChange={this.updateBody} type="text" value={this.state.body} />
                 </label>
+                <br/>
                 <label>Done?
                     <input onChange={this.updateDone} type="text" value={this.state.done} />
                 </label>
+                <br/>
                 <input type="submit" value="Add Todo"></input>
             </form>
         )
