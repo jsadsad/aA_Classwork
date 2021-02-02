@@ -20,6 +20,8 @@ _Middleware_ will check if action is asynch or sync. Our rails app is a json API
 
 # Thunk Middleware
 
+- Thunk checks to see if it is a function or a POJO.
+
 - A thunk action creator returns a function `dispatch, getState` that returns a APIUtil.
 
 - It facilitates the waiting on an API call and dispatches it to the store.
@@ -53,3 +55,5 @@ Should be the last middleware and applied after thunk.
 - A `thunk` middleware invokes with the store dispatch and getState functions.
 
 - A piece of Redux middleware receives its inputs in the following order: `store, next, action`.
+
+- Rule of thumb: actions that are objects will be picked up by reducers and update the store; actions that are functions will trigger our thunk middleware and execute AJAX requests.
