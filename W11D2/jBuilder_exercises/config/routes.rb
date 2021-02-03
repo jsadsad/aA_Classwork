@@ -4,5 +4,6 @@ Rails.application.routes.draw do
       resources :gifts, only: [:index]
     end
     resources :gifts, only: [:show]
+    resources :parties, only: [:index, :show]
   end
 end
