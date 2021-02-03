@@ -35,7 +35,16 @@ Your PM will regularly review your progress and work and be there to offer guida
 - include bonus(stretch) features that you will implement with enough time
 
 # Schema
+
 - tables
 - name of columns and data types
 - validations and indices
 - standard vs joins table
+
+# State Shape
+
+We want a _normalized_ State. State shape is flat. State's keys are camelCased. All keys within the values in the state are accessible in the schema.
+
+Joins tables get their own slice of state. Allows us to avoid relationship pointer issues.
+
+- Top level keys of `entities`, `session`, `ui`, `errors`
