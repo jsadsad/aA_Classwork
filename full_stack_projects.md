@@ -48,3 +48,9 @@ We want a _normalized_ State. State shape is flat. State's keys are camelCased. 
 Joins tables get their own slice of state. Allows us to avoid relationship pointer issues.
 
 - Top level keys of `entities`, `session`, `ui`, `errors`
+
+# Full Stack Backend Routes
+
+API Routes are how we'll be sending and receiving information between our frontend and backend.
+
+Aim to keep our routes RESTful but there may be situations that need a custom route.
