@@ -238,7 +238,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 document.addEventListener('DOMContentLoaded', function () {
   var root = document.getElementById('root');
-  var preloadedState = undefined;
+  var preloadedState = undefined; //makes sure we have a variable we can use.
   if (window.currentUser) {
     preloadedState = {
       session: {
