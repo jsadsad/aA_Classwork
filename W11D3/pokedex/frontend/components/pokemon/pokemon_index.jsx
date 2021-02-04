@@ -11,7 +11,7 @@ class PokemonIndex extends React.Component{
   }
   
   render(){
-    debugger
+    
     return (
     <section className="pokedex">
       <ul>
