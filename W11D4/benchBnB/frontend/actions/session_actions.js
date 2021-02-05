@@ -19,11 +19,15 @@ const receiveErrors = (errors) => ({
 })
 
 export const login = (user) => dispatch => postSession(user).then(
-    user => dispatch(receiveCurrentUser(user))
+    user => dispatch(receiveCurrentUser(user)) //this was from the json show/partial
 )
 
 export const createNewUser = (user) => dispatch => postUser(user).then(
     user => dispatch(receiveCurrentUser(user))
 )
 
-export const logout = () => dispatch => deleteSession().then(() => dispatch(logoutCurrentUser))
+export const logout = () => dispatch => (
+    deleteSession().then(user => (
+        dispatch(logoutCurrentUser())
+    ))
+);
