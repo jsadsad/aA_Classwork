@@ -54,3 +54,15 @@ Joins tables get their own slice of state. Allows us to avoid relationship point
 API Routes are how we'll be sending and receiving information between our frontend and backend.
 
 Aim to keep our routes RESTful but there may be situations that need a custom route.
+
+# Frontend Routes
+
+- `/login`
+- `/signup`
+- `/feed`
+
+# Tips
+
+- Have a working app at every stage of the project. It might not be a 'good' app, but it should function.
+
+- Iterate quickly: build small pieces to completion. write a method, test a method.
