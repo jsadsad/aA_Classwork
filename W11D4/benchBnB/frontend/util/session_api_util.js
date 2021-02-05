@@ -5,7 +5,7 @@ export const postUser = user => (
         data: { user }, // user: user
     })
 )
- 
+
 export const postSession = user => (
     $.ajax({
         url: "/api/session",
