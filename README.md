@@ -55,6 +55,6 @@ Schedule in _Weeks_:
 
 ![REDUX](VISUALS/redux_diagram.gif)
 
-![With_Without_Redux](VVISUALS/with_without_redux.png)
+![With_Without_Redux](VISUALS/with_without_redux.png)
 
 ![Rails and REDUX](VISUALS/rails_redux_cycle.png)
