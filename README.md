@@ -45,10 +45,16 @@ Schedule in _Weeks_:
 
 ## Important
 
-![Big O Notation](VISUALS/Big_O_Complexity.jpeg)
+![Big_O_Notation](VISUALS/Big_O_Complexity.jpeg)
 
-![Rails MVC](VISUALS/Rails_MVC.png)
+![Rails_MVC](VISUALS/Rails_MVC.png)
 
 ![HTML_DOM_JAVASCRIPT](VISUALS/HTML_DOM_JavaScript.png)
 
+![onHTMLElements](VISUALS/onHTMLElements.png)
+
 ![REDUX](VISUALS/redux_diagram.gif)
+
+![With_Without_Redux](VVISUALS/with_without_redux.png)
+
+![Rails and REDUX](VISUALS/rails_redux_cycle.png)
